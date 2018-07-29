@@ -1,3 +1,4 @@
+import javax.inject.Inject;
 
 public class War {
 
@@ -5,6 +6,7 @@ public class War {
     private Boltons boltons;
 
     //DI - getting dependencies from else where via constructor
+    @Inject
     public War(Starks starks, Boltons bolton){
         this.starks = starks;
         this.boltons = bolton;

@@ -1,11 +1,15 @@
 public class BattleOfBastards {
     public static void main(String[] args){
-        IronBank bank = new IronBank();
-        Allies allies = new Allies(bank);
-        Starks starks = new Starks(allies, bank);
-        Boltons boltons = new Boltons(allies, bank);
+//        Old DI
+//        Starks starks = new Starks();
+//        Boltons boltons = new Boltons();
+//        War war = new War(starks, boltons);
+//        war.prepare();
+//        war.report();
 
-        War war = new War(starks, boltons);
+//        New DI
+        BattleComponent battleComponent = DaggerBattleComponent.create();
+        War war = battleComponent.getWar();
         war.prepare();
         war.report();
     }
