@@ -12,5 +12,9 @@ public class BattleOfBastards {
         War war = battleComponent.getWar();
         war.prepare();
         war.report();
+
+        System.out.println();
+        battleComponent.getBoltons().prepareForWar();
+        battleComponent.getStarks().prepareForWar();
     }
 }
